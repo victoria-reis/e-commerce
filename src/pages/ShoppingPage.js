@@ -1,10 +1,13 @@
 import React, { useContext } from "react";
 import { ProductContext } from "../store/ProductContext";
+import { CartContext } from "../store/CartContext";
 import ProductInfo from "../components/ProductInfo";
 
 const ShoppingPage = () => {
 	const products = useContext(ProductContext);
-	console.log(products);
+	const { cartState } = useContext(CartContext);
+
+	console.log(cartState.items);
 	return (
 		<>
 			<div>
@@ -12,15 +15,7 @@ const ShoppingPage = () => {
 			</div>
 			<div>
 				{products.map((item) => {
-					return (
-						<ProductInfo
-							key={item.id}
-							title={item.title}
-							price={item.price}
-							image={item.image}
-							id={item.id}
-						/>
-					);
+					return <ProductInfo key={item.id} product={item} />;
 				})}
 			</div>
 		</>
