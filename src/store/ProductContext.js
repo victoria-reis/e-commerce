@@ -13,8 +13,14 @@ export const ProductProvider = (props) => {
 		fetchProducts();
 	}, []);
 
+	const filteredProducts = products.filter((item) => {
+		return (
+			item.category === "men's clothing" || item.category === "women's clothing"
+		);
+	});
+
 	return (
-		<ProductContext.Provider value={products}>
+		<ProductContext.Provider value={filteredProducts}>
 			{props.children}
 		</ProductContext.Provider>
 	);

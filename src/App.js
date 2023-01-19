@@ -5,12 +5,13 @@ import ShoppingPage from "./pages/ShoppingPage";
 import ProductDetailsPage from "./pages/ProductDetailsPage";
 import ContactPage from "./pages/ContactPage";
 import CartPage from "./pages/CartPage";
-import { ProductContext } from "./store/ProductContext";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 function App() {
 	return (
-		<div>
-			<h1>My E-Commerce</h1>
+		<>
+			<Header />
 			<Routes>
 				<Route path="/" element={<HomePage />} />
 				<Route path="/shopping" element={<ShoppingPage />} />
@@ -18,7 +19,8 @@ function App() {
 				<Route path="/cart" element={<CartPage />} />
 				<Route path="/contact" element={<ContactPage />} />
 			</Routes>
-		</div>
+			<Footer />
+		</>
 	);
 }
 
