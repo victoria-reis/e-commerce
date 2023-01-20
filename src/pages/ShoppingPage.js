@@ -7,7 +7,7 @@ const ShoppingPage = () => {
 	const products = useContext(ProductContext);
 	const { cartState } = useContext(CartContext);
 
-	console.log(cartState.items);
+	console.log(cartState);
 	return (
 		<>
 			<div>
