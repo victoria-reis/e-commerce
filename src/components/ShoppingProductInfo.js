@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { CartContext } from "../store/CartContext";
 import { Link } from "react-router-dom";
 
-const ProductInfo = (props) => {
+const ShoppingProductInfo = (props) => {
 	const { dispatchCartAction } = useContext(CartContext);
 
 	const addToCart = (product) => {
@@ -40,4 +40,4 @@ const ProductInfo = (props) => {
 	);
 };
 
-export default ProductInfo;
+export default ShoppingProductInfo;

@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
 import { ProductContext } from "../store/ProductContext";
 import { CartContext } from "../store/CartContext";
-import ProductInfo from "../components/ProductInfo";
+import ShoppingProductInfo from "../components/ShoppingProductInfo";
 
 const ShoppingPage = () => {
 	const products = useContext(ProductContext);
@@ -29,7 +29,7 @@ const ShoppingPage = () => {
 			</div>
 			<div>
 				{productsByCategory.map((item) => {
-					return <ProductInfo key={item.id} product={item} />;
+					return <ShoppingProductInfo key={item.id} product={item} />;
 				})}
 			</div>
 		</>
