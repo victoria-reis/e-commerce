@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { CartContext } from "../store/CartContext";
+import { Link } from "react-router-dom";
 
 const ProductInfo = (props) => {
 	const { dispatchCartAction } = useContext(CartContext);
@@ -16,9 +17,9 @@ const ProductInfo = (props) => {
 
 	return (
 		<div>
-			<div>
+			<Link to={`/productDetails/${props.product.id}`}>
 				<img src={props.product.image} alt="" />
-			</div>
+			</Link>
 			<p>{props.product.title}</p>
 			<p>$ {parseFloat(props.product.price).toFixed(2)}</p>
 			<button
