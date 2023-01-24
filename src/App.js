@@ -10,7 +10,7 @@ import Footer from "./components/Footer";
 
 function App() {
 	return (
-		<div className="container mx-auto bg-slate-100">
+		<div className="container mx-auto bg-slate-100 px-10">
 			<Header />
 			<Routes>
 				<Route path="/" element={<HomePage />} />

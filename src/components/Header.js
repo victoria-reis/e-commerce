@@ -1,19 +1,32 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../store/CartContext";
+import { BsBagFill } from "react-icons/bs";
 
 const Header = () => {
 	const { cartState } = useContext(CartContext);
 	return (
-		<div className="header">
-			<h1>My E-Commerce</h1>
-			<nav>
-				<Link to="/">Home</Link>
-				<Link to="/shopping">Shop</Link>
-				<Link to="/contact">Contact</Link>
-				<Link to="/cart">🛒</Link>
-				<p>{cartState.totalAmount}</p>
+		<div className="flex items-center justify-between">
+			<h1 className="text-6xl">FASHION4U</h1>
+			<nav className=" w-3/4 flex justify-evenly">
+				<Link to="/" className="hover:scale-110 ease-in duration-100">
+					Home
+				</Link>
+				<Link to="/shopping" className="hover:scale-110 ease-in duration-100">
+					Shop
+				</Link>
+				<Link to="/contact" className="hover:scale-110 ease-in duration-100">
+					Contact
+				</Link>
 			</nav>
+			<div className="relative mr-10">
+				<Link to="/cart">
+					<BsBagFill className="text-[30px]" />
+					<div className="absolute text-[14px] text-white w-full top-[8px]">
+						<p className="block w-min mx-auto">{cartState.totalAmount}</p>
+					</div>
+				</Link>
+			</div>
 		</div>
 	);
 };
