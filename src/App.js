@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import ShoppingPage from "./pages/ShoppingPage";
@@ -10,17 +10,18 @@ import Footer from "./components/Footer";
 
 function App() {
 	return (
-		<>
+		<div className="container mx-auto bg-slate-100">
 			<Header />
 			<Routes>
 				<Route path="/" element={<HomePage />} />
-				<Route path="/shopping/:category" element={<ShoppingPage />} />
+				<Route path="/shopping/:category?" element={<ShoppingPage />} />
 				<Route path="/productDetails/:id" element={<ProductDetailsPage />} />
 				<Route path="/cart" element={<CartPage />} />
 				<Route path="/contact" element={<ContactPage />} />
+				<Route path="*" element={<p>404, page not found!</p>} />
 			</Routes>
 			<Footer />
-		</>
+		</div>
 	);
 }
 

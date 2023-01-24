@@ -18,7 +18,7 @@ const CartProductInfo = (props) => {
 	return (
 		<div>
 			<img src={props.item.image} alt="" />
-			<Link to={`/productDetails/${props.item.id}`}></Link>
+			<Link to={`/productDetails/${props.item.id}`}>{props.item.title}</Link>
 			<p>$ {parseFloat(props.item.unitPrice).toFixed(2)}</p>
 			<p>$ {parseFloat(props.item.totalPrice).toFixed(2)}</p>
 			<div>
