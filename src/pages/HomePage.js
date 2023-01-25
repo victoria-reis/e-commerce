@@ -6,27 +6,33 @@ import ShopWomensImage from "../assets/shop-womens.jpg";
 
 const HomePage = () => {
 	return (
-		<div className="flex flex-wrap">
+		<div className="grid grid-cols-2 gap-2">
 			<Link
 				to="/shopping"
 				style={{ backgroundImage: `url(${ShopAllImage})` }}
-				className="w-full h-[500px] bg-center bg-cover flex justify-center items-center brightness-[.85] hover:brightness-100 ease-in duration-200"
+				className="col-span-2 xl:h-[550px] h-[450px] bg-center bg-cover flex justify-center items-center brightness-[.85] hover:brightness-100 ease-in duration-200"
 			>
-				<h2 className="block w-max text-8xl text-white">Shop All</h2>
+				<h2 className="block w-max text-8xl text-white drop-shadow-lg">
+					Shop All
+				</h2>
 			</Link>
 			<Link
 				to="/shopping/womens"
 				style={{ backgroundImage: `url(${ShopWomensImage})` }}
-				className="w-[50%] h-[700px] bg-top bg-cover flex justify-center items-center brightness-[.85] hover:brightness-100 ease-in duration-200"
+				className="h-[700px] bg-center bg-cover flex justify-center items-center brightness-[.85] hover:brightness-100 ease-in duration-200"
 			>
-				<h2 className="block w-max text-8xl text-white">Shop Women's</h2>
+				<h2 className="block w-max xl:text-8xl text-6xl text-center text-white drop-shadow-lg">
+					Shop Women's
+				</h2>
 			</Link>
 			<Link
 				to="/shopping/mens"
 				style={{ backgroundImage: `url(${ShopMensImage})` }}
-				className="w-[50%] h-[700px] bg-top bg-cover flex justify-center items-center brightness-[.85] hover:brightness-100 ease-in duration-200"
+				className="h-[700px] bg-top xl-bg-top bg-cover flex justify-center items-center brightness-[.85] hover:brightness-100 ease-in duration-200"
 			>
-				<h2 className="block w-max text-8xl text-white">Shop Men's</h2>
+				<h2 className="block w-max xl:text-8xl text-6xl text-center text-white drop-shadow-lg">
+					Shop Men's
+				</h2>
 			</Link>
 		</div>
 	);

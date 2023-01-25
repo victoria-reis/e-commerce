@@ -3,7 +3,7 @@ import { CartContext } from "../store/CartContext";
 import { Link } from "react-router-dom";
 
 const CartProductInfo = (props) => {
-	const { cartState, dispatchCartAction } = useContext(CartContext);
+	const { dispatchCartAction } = useContext(CartContext);
 
 	const addToCart = (product) => {
 		dispatchCartAction({ type: "ADD", item: product });
