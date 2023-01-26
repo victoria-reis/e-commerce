@@ -47,7 +47,7 @@ const ShoppingProductInfo = (props) => {
 				>
 					{props.product.title}
 				</Link>
-				<p className="mt-4 bg-amber-100 block w-max px-2">
+				<p className="mt-4 bg-amber-100 block w-max px-2 rounded-full">
 					$ {parseFloat(props.product.price).toFixed(2)}
 				</p>
 			</div>

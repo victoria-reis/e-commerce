@@ -6,19 +6,32 @@ const CartPage = () => {
 	const { cartState } = useContext(CartContext);
 	return (
 		<>
-			<p className="text-center text-3xl font-bold my-8">
+			<h2 className="text-center text-3xl font-bold mt-14">
 				My Cart ({cartState.totalAmount})
-			</p>
-			<div>
+			</h2>
+			<div className="pb-20">
 				{cartState.items.length > 0 ? (
-					cartState.items.map((item) => {
-						return <CartProductInfo key={item.id} item={item} />;
-					})
+					<div className="my-10">
+						{cartState.items.map((item) => {
+							return <CartProductInfo key={item.id} item={item} />;
+						})}
+					</div>
 				) : (
-					<p>Your cart is empty!</p>
+					// <div className="flex flex-col h-[80vh]">
+					<div className="flex flex-col justify-center h-[80vh]">
+						{/* <p className="block w-max mx-auto justify-self-center"> */}
+						<p className="block w-max mx-auto text-2xl">Your cart is empty!</p>
+					</div>
+				)}
+				<p className="block w-max ml-auto mr-24 text-xl bg-amber-300 px-4 py-2 rounded-full">
+					TOTAL: ${parseFloat(cartState.totalPrice).toFixed(2)}
+				</p>
+				{cartState.items.length > 0 && (
+					<button className="block w-max mx-auto mt-10 bg-amber-300 px-12 py-4 rounded-full text-2xl hover:scale-105 ease-in duration-200">
+						Checkout
+					</button>
 				)}
 			</div>
-			<p>TOTAL: $ {parseFloat(cartState.totalPrice).toFixed(2)}</p>
 		</>
 	);
 };
