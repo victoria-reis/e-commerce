@@ -17,7 +17,7 @@ const ShoppingProductInfo = (props) => {
 	// };
 
 	return (
-		<div className="bg-white p-4 hover:underline">
+		<div className="bg-white p-4 hover:underline brightness-[.98] hover:brightness-100 ease-in duration-200">
 			<div className="relative">
 				<Link to={`/productDetails/${props.product.id}`}>
 					<img

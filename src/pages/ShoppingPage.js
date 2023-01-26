@@ -25,12 +25,12 @@ const ShoppingPage = () => {
 		if (category) {
 			setChosenCategory(category);
 		}
-	}, []);
+	}, [category]);
 
 	// console.log(productsByCategory);
 
 	return (
-		<>
+		<div className="min-h-screen">
 			<div>
 				<h2>Our products</h2>
 			</div>
@@ -61,7 +61,7 @@ const ShoppingPage = () => {
 					return <ShoppingProductInfo key={item.id} product={item} />;
 				})}
 			</div>
-		</>
+		</div>
 	);
 };
 
