@@ -8,13 +8,7 @@ const ShoppingProductInfo = (props) => {
 
 	const addToCart = (product) => {
 		dispatchCartAction({ type: "ADD", item: product });
-		// console.log(`Added ${product.title} of id ${product.id} to my cart!`);
 	};
-
-	// const removeFromCart = (product) => {
-	// 	dispatchCartAction({ type: "REMOVE", item: product });
-	// 	// console.log(`Added ${product.title} of id ${product.id} to my cart!`);
-	// };
 
 	return (
 		<div className="bg-white p-4 hover:underline brightness-[.98] hover:brightness-100 ease-in duration-200">
@@ -34,18 +28,8 @@ const ShoppingProductInfo = (props) => {
 				>
 					<BsPlusCircleFill className="text-amber-300 text-3xl" />
 				</button>
-				{/* <button
-					onClick={() => {
-						removeFromCart(props.product);
-					}}
-				>
-					remove
-				</button> */}
-				<Link
-					to={`/productDetails/${props.product.id}`}
-					className="text-[15px]"
-				>
-					{props.product.title}
+				<Link to={`/productDetails/${props.product.id}`}>
+					<h2 className="text-[15px]">{props.product.title}</h2>
 				</Link>
 				<p className="mt-4 bg-amber-100 block w-max px-2 rounded-full">
 					$ {parseFloat(props.product.price).toFixed(2)}

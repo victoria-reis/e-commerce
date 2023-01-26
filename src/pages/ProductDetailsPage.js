@@ -8,25 +8,19 @@ import { CartContext } from "../store/CartContext";
 const ProductDetailsPage = () => {
 	const { id: productId } = useParams();
 	const products = useContext(ProductContext);
-	const { dispatchCartAction, cartState } = useContext(CartContext);
+	const { dispatchCartAction } = useContext(CartContext);
 
 	const product = products.find((item) => {
 		return item.id === parseFloat(productId);
 	});
 
-	console.log(cartState);
-
 	const addToCart = (product) => {
 		dispatchCartAction({ type: "ADD", item: product });
-		// console.log(`Added ${product.title} of id ${product.id} to my cart!`);
 	};
 
 	const removeFromCart = (product) => {
 		dispatchCartAction({ type: "REMOVE", item: product });
-		// console.log(`Added ${product.title} of id ${product.id} to my cart!`);
 	};
-
-	// console.log(product);
 
 	return (
 		<div className="min-h-[95vh] bg-white flex items-center px-16">

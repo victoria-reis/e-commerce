@@ -7,8 +7,6 @@ import ShoppingProductInfo from "../components/ShoppingProductInfo";
 const ShoppingPage = () => {
 	const products = useContext(ProductContext);
 	const [chosenCategory, setChosenCategory] = useState("all");
-	// const { cartState } = useContext(CartContext);
-
 	const { category } = useParams();
 
 	const productsByCategory = products.filter((item) => {
@@ -27,13 +25,8 @@ const ShoppingPage = () => {
 		}
 	}, [category]);
 
-	// console.log(productsByCategory);
-
 	return (
 		<div className="min-h-screen">
-			<div>
-				<h2>Our products</h2>
-			</div>
 			<select
 				name="pickCategory"
 				id=""
