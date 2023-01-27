@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { ProductContext } from "../store/ProductContext";
 // import { CartContext } from "../store/CartContext";
 import ShoppingProductInfo from "../components/ShoppingProductInfo";
+import Spinner from "../components/Spinner";
 
 const ShoppingPage = () => {
 	const products = useContext(ProductContext);
@@ -49,11 +50,15 @@ const ShoppingPage = () => {
 				<option value="lowToHigh">Price low to high</option>
 				<option value="highToLow">Price high to low</option>
 			</select>
-			<div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-4 2xl:gap-8 lg:px-16 my-8 2xl:my-16">
-				{productsByCategory.map((item) => {
-					return <ShoppingProductInfo key={item.id} product={item} />;
-				})}
-			</div>
+			{products.length < 1 ? (
+				<Spinner />
+			) : (
+				<div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-4 2xl:gap-8 lg:px-16 my-8 2xl:my-16">
+					{productsByCategory.map((item) => {
+						return <ShoppingProductInfo key={item.id} product={item} />;
+					})}
+				</div>
+			)}
 		</div>
 	);
 };

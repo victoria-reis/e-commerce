@@ -19,7 +19,7 @@ const Header = () => {
 	return (
 		<div className="flex items-center justify-between">
 			{screenWidth < 550 ? (
-				<h1 className="text-6xl">F4U</h1>
+				<h1 className="text-6xl tracking-tight">F4U</h1>
 			) : (
 				<h1 className="text-6xl">FASHION4U</h1>
 			)}
