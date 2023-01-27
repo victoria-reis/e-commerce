@@ -17,9 +17,7 @@ const CartPage = () => {
 						})}
 					</div>
 				) : (
-					// <div className="flex flex-col h-[80vh]">
 					<div className="flex flex-col justify-center h-[70vh] md:h-[80vh]">
-						{/* <p className="block w-max mx-auto justify-self-center"> */}
 						<p className="block w-max mx-auto text-2xl">Your cart is empty!</p>
 					</div>
 				)}
