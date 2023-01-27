@@ -6,6 +6,7 @@ import { BsBagFill } from "react-icons/bs";
 const Header = () => {
 	const { cartState } = useContext(CartContext);
 	const [bounceAnimation, setBounceAnimation] = useState("");
+	const screenWidth = window.innerWidth;
 
 	useEffect(() => {
 		setBounceAnimation("animate-bounce");
@@ -17,7 +18,11 @@ const Header = () => {
 
 	return (
 		<div className="flex items-center justify-between">
-			<h1 className="text-6xl">FASHION4U</h1>
+			{screenWidth < 550 ? (
+				<h1 className="text-6xl">F4U</h1>
+			) : (
+				<h1 className="text-6xl">FASHION4U</h1>
+			)}
 			<nav className=" w-3/4 flex justify-evenly">
 				<Link to="/" className="hover:scale-110 ease-in duration-100">
 					Home
@@ -29,7 +34,7 @@ const Header = () => {
 					Contact
 				</Link>
 			</nav>
-			<div className={`relative mr-10 ${bounceAnimation}`}>
+			<div className={`relative sm:mr-10 ${bounceAnimation}`}>
 				<Link to="/cart">
 					<BsBagFill className="text-[30px]" />
 					<div className="absolute text-[14px] text-white w-full top-[8px]">
