@@ -10,10 +10,10 @@ import {
 const Footer = () => {
 	return (
 		<>
-			<section className="flex h-[250px] justify-between mt-10">
-				<div className="w-1/4">
+			<section className="mt-10 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 lg:mb-10">
+				<div className="flex flex-col">
 					<h3 className="font-semibold">Customer Support</h3>
-					<ul className="flex flex-col leading-10">
+					<ul className="flex flex-col leading-7 md:leading-10">
 						<li>
 							<Link>Contact Us</Link>
 						</li>
@@ -28,9 +28,9 @@ const Footer = () => {
 						</li>
 					</ul>
 				</div>
-				<div className="flex flex-col w-1/4">
+				<div className="flex flex-col">
 					<h3 className="font-semibold">Orders & Returns</h3>
-					<ul className="flex flex-col leading-10">
+					<ul className="flex flex-col leading-7 md:leading-10">
 						<li>
 							<a href="/">Shipping Methods</a>
 						</li>
@@ -45,9 +45,9 @@ const Footer = () => {
 						</li>
 					</ul>
 				</div>
-				<div className="flex flex-col w-1/6">
+				<div className="flex flex-col mt-8 sm:mt-0">
 					<h3 className="font-semibold">Company Info</h3>
-					<ul className="flex flex-col leading-10">
+					<ul className="flex flex-col leading-7 md:leading-10">
 						<li>
 							<a href="/">About Us</a>
 						</li>
@@ -56,9 +56,9 @@ const Footer = () => {
 						</li>
 					</ul>
 				</div>
-				<div className="xl:w-1/6 w-1/4">
-					<h4 className="font-semibold">Follow Us:</h4>
-					<ul className="flex mt-9 justify-between">
+				<div className="col-span-2 sm:col-span-3 lg:col-span-1 my-10 lg:mt-0 ">
+					<h4 className="font-semibold text-center lg:text-left">Follow Us:</h4>
+					<ul className="flex mt-9 md:justify-between justify-evenly w-[60%] mx-auto lg:mx-0 lg:w-auto xl:w-[80%] 2xl:w-[60%] sm:w-[40%]">
 						<li className="text-5xl">
 							<a href="https://www.instagram.com/">
 								<FaInstagram />
