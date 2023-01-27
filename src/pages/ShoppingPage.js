@@ -49,7 +49,7 @@ const ShoppingPage = () => {
 				<option value="lowToHigh">Price low to high</option>
 				<option value="highToLow">Price high to low</option>
 			</select>
-			<div className="grid grid-cols-4 gap-20 px-16 my-20">
+			<div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-4 2xl:gap-8 lg:px-16 my-8 2xl:my-16">
 				{productsByCategory.map((item) => {
 					return <ShoppingProductInfo key={item.id} product={item} />;
 				})}

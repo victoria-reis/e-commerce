@@ -17,7 +17,7 @@ const ShoppingProductInfo = (props) => {
 					<img
 						src={props.product.image}
 						alt={props.product.title}
-						className="w-[55%] mx-auto py-10"
+						className="w-[30%] sm:w-[55%] mx-auto py-4 sm:py-10"
 					/>
 				</Link>
 				<button
