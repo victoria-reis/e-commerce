@@ -17,15 +17,15 @@ const CartProductInfo = (props) => {
 	};
 
 	return (
-		<div className="bg-white mb-2 flex items-center py-10 w-11/12 mx-auto">
+		<div className="bg-white mb-2 flex items-center py-5 sm:py-10 w-11/12 mx-auto pr-4 sm:pr-0">
 			<Link to={`/productDetails/${props.item.id}`}>
 				<img
 					src={props.item.image}
 					alt={props.item.title}
-					className="w-[120px] min-w-[100px] mx-12"
+					className="w-[75px] sm:min-w-[100px] mx-6 sm:mx-12"
 				/>
 			</Link>
-			<div className="w-full mr-16 ml-4">
+			<div className="w-full sm:mr-16 ml-10 sm:ml-4">
 				<Link
 					to={`/productDetails/${props.item.id}`}
 					className="hover:underline"

@@ -6,24 +6,24 @@ const CartPage = () => {
 	const { cartState } = useContext(CartContext);
 	return (
 		<>
-			<h2 className="text-center text-3xl font-bold mt-14">
+			<h2 className="text-center text-3xl font-bold mt-6 sm:mt-14">
 				My Cart ({cartState.totalAmount})
 			</h2>
-			<div className="pb-20">
+			<div className=" pb-12 sm:pb-20">
 				{cartState.items.length > 0 ? (
-					<div className="my-10">
+					<div className="my-6 sm:my-10">
 						{cartState.items.map((item) => {
 							return <CartProductInfo key={item.id} item={item} />;
 						})}
 					</div>
 				) : (
 					// <div className="flex flex-col h-[80vh]">
-					<div className="flex flex-col justify-center h-[80vh]">
+					<div className="flex flex-col justify-center h-[70vh] md:h-[80vh]">
 						{/* <p className="block w-max mx-auto justify-self-center"> */}
 						<p className="block w-max mx-auto text-2xl">Your cart is empty!</p>
 					</div>
 				)}
-				<p className="block w-max ml-auto mr-24 text-xl bg-amber-300 px-4 py-2 rounded-full">
+				<p className="block w-max mx-auto md:ml-auto md:mr-24 text-xl bg-amber-300 px-4 py-2 rounded-full">
 					TOTAL: ${parseFloat(cartState.totalPrice).toFixed(2)}
 				</p>
 				{cartState.items.length > 0 && (
