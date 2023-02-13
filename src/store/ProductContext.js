@@ -7,8 +7,14 @@ export const ProductProvider = (props) => {
 	useEffect(() => {
 		const fetchProducts = async () => {
 			const response = await fetch("https://fakestoreapi.com/products");
-			const data = await response.json();
-			setProducts(data);
+			if (response.status >= 200 && response.status <= 299) {
+				const data = await response.json();
+				// const jsonResponse = await response.json();
+				setProducts(data);
+			} else {
+				// Handle errors
+				console.log(response.status, response.statusText);
+			}
 		};
 		fetchProducts();
 	}, []);
