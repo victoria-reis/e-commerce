@@ -9,11 +9,13 @@ const Header = () => {
 	const screenWidth = window.innerWidth;
 
 	useEffect(() => {
-		setBounceAnimation("animate-bounce");
-		setTimeout(() => {
-			setBounceAnimation("");
-		}, 500);
-		clearTimeout();
+		if (cartState.totalAmount !== 0) {
+			setBounceAnimation("animate-bounce");
+			setTimeout(() => {
+				setBounceAnimation("");
+			}, 500);
+			clearTimeout();
+		}
 	}, [cartState.totalAmount]);
 
 	return (
