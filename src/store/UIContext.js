@@ -5,7 +5,6 @@ export const UIContext = React.createContext();
 export const UIProvider = (props) => {
 	const [isLoading, setIsLoading] = useState(false);
 	const [errorMessage, setErrorMessage] = useState(undefined);
-	// const [showSidebar, setShowSidebar] = useState(false);
 
 	return (
 		<UIContext.Provider
