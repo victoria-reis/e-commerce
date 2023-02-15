@@ -8,12 +8,10 @@ const CartProductInfo = (props) => {
 
 	const addToCart = (product) => {
 		dispatchCartAction({ type: "ADD", item: product });
-		// console.log(`Added ${product.title} of id ${product.id} to my cart!`);
 	};
 
 	const removeFromCart = (product) => {
 		dispatchCartAction({ type: "REMOVE", item: product });
-		// console.log(`Added ${product.title} of id ${product.id} to my cart!`);
 	};
 
 	return (

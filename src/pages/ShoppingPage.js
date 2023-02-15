@@ -5,29 +5,29 @@ import { ProductContext } from "../store/ProductContext";
 import { UIContext } from "../store/UIContext";
 // import { CartContext } from "../store/CartContext";
 import ShoppingProductInfo from "../components/ShoppingProductInfo";
+import ProductsFilters from "../components/ProductsFilters";
 import Spinner from "../components/Spinner";
 
 const ShoppingPage = () => {
 	const products = useContext(ProductContext);
-	const { isLoading, errorMessage } = useContext(UIContext);
-	const [chosenCategory, setChosenCategory] = useState("all");
 	const { category } = useParams();
 
-	const productsByCategory = products.filter((item) => {
-		if (chosenCategory === "womens") {
-			return item.category === "women's clothing";
-		} else if (chosenCategory === "mens") {
-			return item.category === "men's clothing";
-		} else {
-			return products;
-		}
-	});
+	const { isLoading, errorMessage } = useContext(UIContext);
+	const [chosenCategory, setChosenCategory] = useState("all");
+	const [priceSorting, setPriceSorting] = useState(undefined);
+	const [filteredProducts, setFilteredProducts] = useState(undefined);
 
 	useEffect(() => {
 		if (category) {
 			setChosenCategory(category);
 		}
 	}, [category]);
+
+	useEffect(() => {
+		setFilteredProducts(
+			ProductsFilters(products, chosenCategory, priceSorting)
+		);
+	}, [products, chosenCategory, priceSorting]);
 
 	return (
 		<div className="min-h-screen">
@@ -46,8 +46,10 @@ const ShoppingPage = () => {
 			<select
 				name="sortByPrice"
 				id=""
-				defaultValue={undefined}
-				onChange={() => {}}
+				onChange={(event) => {
+					setPriceSorting(event.target.value);
+				}}
+				defaultValue={priceSorting}
 			>
 				<option value={undefined}>Sort</option>
 				<option value="lowToHigh">Price low to high</option>
@@ -61,11 +63,11 @@ const ShoppingPage = () => {
 					</p>
 				</div>
 			)}
-			{isLoading ? (
+			{isLoading || !filteredProducts ? (
 				<Spinner />
 			) : (
 				<div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-4 2xl:gap-8 lg:px-16 my-8 2xl:my-16">
-					{productsByCategory.map((item) => {
+					{filteredProducts.map((item) => {
 						return <ShoppingProductInfo key={item.id} product={item} />;
 					})}
 				</div>
