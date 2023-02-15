@@ -7,6 +7,7 @@ import { BrowserRouter } from "react-router-dom";
 import { ProductProvider } from "./store/ProductContext";
 import { CartProvider } from "./store/CartContext";
 import { UIProvider } from "./store/UIContext";
+import ScrollToTop from "./components/ScrollToTop";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -15,6 +16,7 @@ root.render(
 			<ProductProvider>
 				<CartProvider>
 					<BrowserRouter>
+						<ScrollToTop />
 						<App />
 					</BrowserRouter>
 				</CartProvider>
